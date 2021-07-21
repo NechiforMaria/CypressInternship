@@ -10,7 +10,7 @@ describe('Register and log in to-do app', () => {
     cy.log("Hii!")
   })
 
-  it.skip('Register with correct data', () => {
+  it('Register with correct data', () => {
     cy.get('#customer_menu_top').click();
     cy.get('#accountFrm > fieldset > button').click();
     cy.get('#AccountFrm_firstname').type('New');
@@ -32,19 +32,19 @@ describe('Register and log in to-do app', () => {
     cy.get('#AccountFrm_agree').click();
     cy.get('#AccountFrm > div.form-group > div > div > button').click();
     cy.get('#maincontainer').click();
-    cy.log('Successful register');
+    //cy.log('Successful register');
   })
 
-  it.skip('Login with valid account', () => {
+  it('Login with valid account', () => {
       cy.get('#customer_menu_top').click();
       cy.get('#loginFrm_loginname').type('contulmeunou');
       cy.get('#loginFrm_password').type('parola123');
       cy.get('#loginFrm > fieldset > button').click();
-      cy.log('Successful login');
+      //cy.log('Successful login');
   })
 
 
-it.skip('Register with invalid email', () => {
+it('Register with invalid email', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
   cy.get('#AccountFrm_firstname').type('123');
@@ -66,7 +66,7 @@ it.skip('Register with invalid email', () => {
   cy.get('#AccountFrm_agree').click();
   cy.get('#AccountFrm > div.form-group > div > div > button').click();
   cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').contains('Email Address does not appear to be valid!');
-  cy.log('Register failed');
+  //cy.log('Register failed');
 })
 
 //not validation: Phone number is incorrect 
@@ -97,7 +97,7 @@ it('Register with invalid phone number', () => {
 }) 
 
 
-it.skip('Register with invalid name', () => {
+it('Register with invalid name', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
   cy.get('#AccountFrm_lastname').type('User');
@@ -120,10 +120,10 @@ it.skip('Register with invalid name', () => {
   //cy.get('#maincontainer').click();
   cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').contains('First Name must be between 1 and 32 characters!');
   cy.get('.help-block').contains('First Name must be between 1 and 32 characters!');
-  cy.log('Register failed');
+  //cy.log('Register failed');
 }) 
 
-it.skip('Register with invalid name >32', () => {
+it('Register with invalid name >32', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
   cy.get('#AccountFrm_firstname').type('12312311111111111111111112222222222');
@@ -147,11 +147,11 @@ it.skip('Register with invalid name >32', () => {
   //cy.get('#maincontainer').click();
   cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').contains('First Name must be between 1 and 32 characters!');
   cy.get('.help-block').contains('First Name must be between 1 and 32 characters!');
-  cy.log('Register failed');
+  //cy.log('Register failed');
 }) 
 
 
-it.skip('Register with invalid login name', () => {
+it('Register with invalid login name', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
   cy.get('#AccountFrm_firstname').type('Cont123');
@@ -175,12 +175,12 @@ it.skip('Register with invalid login name', () => {
   //cy.get('#maincontainer').click();
   cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').contains('Login name must be alphanumeric only and between 5 and 64 characters!');
   cy.get('#AccountFrm > div:nth-child(9) > fieldset > div:nth-child(1) > span').contains('Login name must be alphanumeric only and between 5 and 64 characters!');
-  cy.log('Register failed');
+  //cy.log('Register failed');
 }) 
 
 
 //Error: Password confirmation does not match password!
-it.skip('Register with invalid password confirm', () => {
+it('Register with invalid password confirm', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
   cy.get('#AccountFrm_firstname').type('Cont123');
@@ -203,10 +203,10 @@ it.skip('Register with invalid password confirm', () => {
   cy.get('#AccountFrm > div.form-group > div > div > button').click();
  cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').contains('Password confirmation does not match password!');
  cy.get('#AccountFrm > div:nth-child(9) > fieldset > div.form-group.has-error > span').contains('Password confirmation does not match password!');
- cy.log('Register failed');
+ //cy.log('Register failed');
 }) 
 
-it.skip('Register with empty fields', () => {
+it('Register with empty fields', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
   cy.get('#AccountFrm > div:nth-child(11) > fieldset > div > div > label:nth-child(1)').click();
@@ -221,16 +221,16 @@ it.skip('Register with empty fields', () => {
   .contains('Zip/postal code must be between 3 and 10 characters!')
   .contains('Please select a region / state!')
   .contains('Password must be between 4 and 20 characters!');
-  cy.log('Register failed');
+  //cy.log('Register failed');
 }) 
 
-it.skip('Login with invalid login name', () => {
+it('Login with invalid login name', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#loginFrm_loginname').type('cont');
   cy.get('#loginFrm_password').type('parola123');
   cy.get('#loginFrm > fieldset > button').click();
   cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').should('be.visible').contains('Error: Incorrect login or password provided.');
-  cy.log('Filed login');
+  //cy.log('Filed login');
 })
 
 it.skip('Login with invalid password', () => {
@@ -239,14 +239,14 @@ it.skip('Login with invalid password', () => {
   cy.get('#loginFrm_password').type('parola123456');
   cy.get('#loginFrm > fieldset > button').click();
   cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').should('be.visible').contains('Error: Incorrect login or password provided.');
-  cy.log('Filed login');
+  //cy.log('Filed login');
 })
 
-it.skip('Login with empty fields', () => {
+it('Login with empty fields', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#loginFrm > fieldset > button').click();
   cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').should('be.visible').contains('Error: Incorrect login or password provided.');
-  cy.log('Filed login');
+  //cy.log('Filed login');
 })
 
 })
