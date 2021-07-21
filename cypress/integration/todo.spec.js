@@ -3,7 +3,7 @@
 describe('Register and log in to-do app', () => {
   beforeEach(() => {
     
-    cy.visit('https://automationteststore.com/')
+    cy.visit('/')
   })
 
   it('Test Case', () => {
