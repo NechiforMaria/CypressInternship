@@ -15,7 +15,7 @@ describe('Register and log in to-do app', () => {
     cy.get('#accountFrm > fieldset > button').click();
     cy.get('#AccountFrm_firstname').type('New');
     cy.get('#AccountFrm_lastname').type('User');
-    cy.get('#AccountFrm_email').type('email.valid.nou@gmail.com');
+    cy.get('#AccountFrm_email').type('email.valid.nou200@gmail.com');
     cy.get('#AccountFrm_telephone').type('0756892576');
     cy.get('#AccountFrm_fax').type('0756892576');
     cy.get('#AccountFrm_company').type('My company srl');
@@ -23,15 +23,16 @@ describe('Register and log in to-do app', () => {
     cy.get('#AccountFrm_address_2').type('Bucuresti');
     cy.get('#AccountFrm_city').type('Suceava');
     cy.get('#AccountFrm_country_id').select('Romania').should('have.value','175');
-    cy.get('#AccountFrm_zone_id').select('Alba').should('have.value','2679');
+    cy.get('#AccountFrm_zone_id').select('Arad').should('have.value','2680');
     cy.get('#AccountFrm_postcode').type('5666');
-    cy.get('#AccountFrm_loginname').type('contulmeu2');
+    cy.get('#AccountFrm_loginname').type('contulmeu44');
     cy.get('#AccountFrm_password').type('parola123');
     cy.get('#AccountFrm_confirm').type('parola123');
     cy.get('#AccountFrm > div:nth-child(11) > fieldset > div > div > label:nth-child(1)').click();
     cy.get('#AccountFrm_agree').click();
     cy.get('#AccountFrm > div.form-group > div > div > button').click();
     cy.get('#maincontainer').click();
+    cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > h1 > span.maintext').should('be.visible').contains('YOUR ACCOUNT HAS BEEN CREATED!')
   
   })
 
@@ -40,7 +41,7 @@ describe('Register and log in to-do app', () => {
       cy.get('#loginFrm_loginname').type('contulmeunou');
       cy.get('#loginFrm_password').type('parola123');
       cy.get('#loginFrm > fieldset > button').click();
-      cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > h1 > span.maintext').contains(' My Account')
+      cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > h1 > span.maintext').should('be.visible').contains(' My Account')
       
   })
 
@@ -70,7 +71,7 @@ it('Register with invalid email', () => {
   
 })
 
-//not validation: Phone number is incorrect 
+
 it('Register with invalid phone number', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
@@ -92,7 +93,7 @@ it('Register with invalid phone number', () => {
   cy.get('#AccountFrm > div:nth-child(11) > fieldset > div > div > label:nth-child(1)').click();
   cy.get('#AccountFrm_agree').click();
   cy.get('#AccountFrm > div.form-group > div > div > button').click(); 
-  //cy.get('#maincontainer > div > div > div > div.alert.alert-error.alert-danger').should('be.visible');//expected
+  //bug: Phone number is incorrect 
  
 }) 
 
@@ -174,7 +175,7 @@ it('Register with invalid login name', () => {
 }) 
 
 
-//Error: Password confirmation does not match password!
+
 it('Register with invalid password confirm', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();

@@ -12,7 +12,7 @@ describe('Sign In', () => {
   
 });
 
-    it.only('Register', ()=>{
+    it('Register', ()=>{
         RegisterPage.visit();
         RegisterPage.enterpage().click();
         RegisterPage.buttoncontinue().click()
@@ -33,9 +33,6 @@ describe('Sign In', () => {
         RegisterPage.getYesButton().click();
         RegisterPage.getContinueButton().click();
     
-       
-   
-    //cy.get('#maincontainer').click();
     })
       
   

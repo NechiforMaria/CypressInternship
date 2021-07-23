@@ -36,7 +36,6 @@ it('finalize a purchase', () => {
     cy.get('#block_frame_featured_1769 > div > div:nth-child(1) > div.thumbnail > div.pricetag.jumbotron > a').click();
     cy.get('body > div > header > div.container-fluid > div > div.block_7 > ul > li > a').click();
     cy.get('#cart_checkout1').contains('Checkout').click({force:true})
-    //cy.get('#cart_checkout1').click();
     cy.get('#accountFrm > fieldset > div:nth-child(2) > label').click();
     cy.get('#accountFrm > fieldset > button').click();
     cy.get('#guestFrm_firstname').type('Ana');

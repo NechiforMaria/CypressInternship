@@ -14,9 +14,12 @@ describe('Register and log in to-do a', () => {
     cy.get('#AccountFrm_firstname').type('Ana');
     cy.get('#AccountFrm_lastname').clear();
     cy.get('#AccountFrm_lastname').type('Popescuu');
-    cy.get('#AccountFrm_telephone').type('89');
+    cy.get('#AccountFrm_telephone').clear();
+    cy.get('#AccountFrm_telephone').type('089');
+    cy.get('#AccountFrm_fax').type('89');
     cy.get('#AccountFrm_fax').type('89');
     cy.get('#AccountFrm > div.form-group > div > button').click();
+    cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > div.alert.alert-success').should('be.visible').contains('Success: Your account has been successfully updated.')
     })
 
     it('updating address book', ()=>{
@@ -32,6 +35,7 @@ describe('Register and log in to-do a', () => {
     cy.get('#AddressFrm_default1').click();
     cy.get('#AddressFrm > div > fieldset > div:nth-child(11) > div > button').click();
     cy.get('button.btn.btn-default').contains('Delete').click({force:true})
+    cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > div.alert.alert-success').should('be.visible').contains('Your address has been successfully deleted')
 })
 
 it('wishlist', ()=>{
@@ -44,7 +48,7 @@ it('wishlist', ()=>{
     cy.get('#customer_menu_top > li > a > div').click();
     cy.get('#maincontainer > div > div.column_right.col-md-3.col-xs-12.mt20 > div.sidewidt > div > ul > li:nth-child(2) > a').click();
     cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > div > div > table > tbody > tr.wishlist_52 > td:nth-child(6) > a.btn.btn-sm.btn-default.btn-remove > i').click({force: true})
-    //cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > div > div > div > a.btn.btn-default.mr10').click();
+    cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > h1 > span').should('be.visible').contains(' My wish list')
     
 })
 
