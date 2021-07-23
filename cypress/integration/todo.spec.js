@@ -201,7 +201,7 @@ it('Register with invalid password confirm', () => {
 
 }) 
 
-it.only('Register with empty fields', () => {
+it('Register with empty fields', () => {
   cy.get('#customer_menu_top').click();
   cy.get('#accountFrm > fieldset > button').click();
   cy.get('#AccountFrm > div:nth-child(11) > fieldset > div > div > label:nth-child(1)').click();
