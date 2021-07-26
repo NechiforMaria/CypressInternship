@@ -26,8 +26,6 @@ export class LogInPage {
         return cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > h1 > span.maintext')
     }
 
-    
-
   }
   
   export class RegisterPage {
@@ -126,8 +124,99 @@ export class LogInPage {
         return cy.get('#maincontainer > div > div.col-md-9.col-xs-12.mt20 > div > h1 > span.maintext')
     }
 
+  }
 
-    
+  export class SocialMedia {
+    static visit() {
+      return cy.visit('/');
+    }
+  
+    static facebook() {
+      return cy.get('body > div > header > div.container-fluid > div > div.block_8 > div > div > a.facebook');
+    }
+  
+    static twitter() {
+      return cy.get('body > div > header > div.container-fluid > div > div.block_8 > div > div > a.twitter');
+    }
+
+    static linkedin()
+    {
+        return cy.get('body > div > header > div.container-fluid > div > div.block_8 > div > div > a.linkedin');
+    }
+
+  }
+
+  export class Subscribe {
+    static visit() {
+      return cy.visit('/');
+    }
+  
+    static buttonSubscribe() {
+      return cy.get('#subscribeFrm > div > span > button');
+    }
+  
+    static getFirstName() {
+      return cy.get('#SubscriberFrm_firstname');
+    }
+
+    static getLastName()
+    {
+        return cy.get('#SubscriberFrm_lastname');
+    }
+
+    static getEmail()
+    {
+        return  cy.get('#SubscriberFrm_email');
+    }
+  
+    static captcha()
+    {
+        return cy.get('#SubscriberFrm_captcha');
+    }
+
+    static buttonContinue()
+    {
+        return cy.get('#SubscriberFrm > div.form-group > div > div.pull-right.col-md-4 > button');
+    }
+
+    static geterror()
+    {
+        return cy.get('#SubscriberFrm > div.registerbox.form-horizontal > fieldset > div.form-group.has-error > span');
+    }
 
   }
   
+  export class ContactUs{
+    static visit() {
+      return cy.visit('/');
+    }
+  
+    static buttonContact() {
+      return cy.get('#footer > footer > section.footerlinks > div > div.pull-left > div > ul > li:nth-child(5) > a');
+    }
+  
+    static getFirstName() {
+      return cy.get('#ContactUsFrm_first_name');
+    }
+
+    static getEmail()
+    {
+        return  cy.get('#ContactUsFrm_email');
+    }
+  
+    static Enquiry()
+    {
+        return cy.get('#ContactUsFrm_enquiry');
+    }
+
+    static buttonSubmit()
+    {
+        return cy.get('#ContactUsFrm > div.form-group > div.col-md-6.col-sm-6 > button');
+    }
+
+    static geterror()
+    {
+        return cy.get('#maincontainer > div > div > div > div > section > p:nth-child(3)');
+    }
+
+  }

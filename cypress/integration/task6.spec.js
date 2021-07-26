@@ -1,4 +1,4 @@
-import {LogInPage, RegisterPage} from "./POM.spec.js";
+import {LogInPage, RegisterPage} from "../support/POM/POM.spec.js";
 
 
 describe('Sign In', () => {

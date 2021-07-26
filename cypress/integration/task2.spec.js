@@ -1,5 +1,5 @@
 
-describe('Register and log in to-do app', () => {
+describe('Tests for unregistered customers', () => {
     beforeEach(() => {
       
       cy.visit('/')
